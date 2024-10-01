@@ -110,13 +110,21 @@ const HeroSection = () => {
           flickerChance={0.1}
         />
       </motion.div>
-      <div className="relative z-10 p-8 rounded-lg text-center">
+      <div className="relative z-10 p-8 rounded-lg text-center max-w-full">
         <GradualSpacing
           className="font-display text-center text-4xl font-bold -tracking-widest md:text-7xl md:leading-[5rem]"
           text="ASACAM: Redefining Surveillance"
         />
+        <motion.h2
+          className="text-6xl font-bold mb-4 text-white md:hidden"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          ASACAM: Redefining Surveillance
+        </motion.h2>
         <motion.p
-          className="text-xl mb-8 text-white w-full"
+          className="text-xl mb-8 text-white w-full text-balance"
           initial={{ opacity: 0, y: 20, x: 0 }}
           animate={{ opacity: 1, y: 0, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -366,7 +374,7 @@ export default function Home() {
 
   //     font-[family-name:var(--font-geist-sans)]
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black text-white w-screen overflow-hidden">
       <Header
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}

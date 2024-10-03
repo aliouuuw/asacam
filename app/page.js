@@ -387,7 +387,7 @@ export default function Home() {
           id="product"
           title="Innovative Surveillance Technology"
           content="Our cutting-edge technology provides unmatched surveillance capabilities, ensuring safety and security."
-          imageSrc="/surveillance.gif"
+          imageSrc="/website.jpg"
         />
         <Section
           id="research"

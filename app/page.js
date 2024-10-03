@@ -386,14 +386,14 @@ export default function Home() {
         <Section
           id="product"
           title="Innovative Surveillance Technology"
-          content="Our cutting-edge technology provides unmatched surveillance capabilities, ensuring safety and security."
+          content="Asacam provides state-of-the-art detection technology designed for precision and reliability. We addresses a range of industry challenges such as human short attention spans, false video alerts, lack of automation, and high labor costs. Our AI-driven toolchain offers instant target detections and live natural language descriptions in order to incredibly reducing false positives and enhancing productivity."
           imageSrc="/website.jpg"
         />
         <Section
           id="research"
-          title="Research-Driven Insights"
+          title="First Automated Unified Toolchain "
           content="We invest in extensive research to enhance our technology and adapt to the evolving needs of our clients."
-          imageSrc="/fullyconnected.gif"
+          imageSrc="/tool.jpg"
           reversed
         />
         <Section

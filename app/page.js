@@ -392,7 +392,7 @@ export default function Home() {
         <Section
           id="research"
           title="First Automated Unified Toolchain "
-          content="We invest in extensive research to enhance our technology and adapt to the evolving needs of our clients."
+          content="We built the first automated toolchain that transforms surveillance video into comprehensive and precise report documents. Start your video stream from any camera of your choice and let our AI handle the rest! Once the mission ends, all video data, alerts and live descriptions are safely saved. As the cherry on top, the AI generates a sharp report in natural language, just like a trained human would!"
           imageSrc="/tool.jpg"
           reversed
         />

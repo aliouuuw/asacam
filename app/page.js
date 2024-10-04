@@ -399,8 +399,8 @@ export default function Home() {
         <Section
           id="company"
           title="Our Company"
-          content="ASACAM is dedicated to delivering top-notch surveillance solutions for businesses, governments, and communities."
-          imageSrc="/asamaan.jpg"
+          content="A livestream from any camera of your choice is analyzed by using advanced object detection and leveraging the powerful GPT-4 model. This combination allows for real-time, intelligent scene descriptions and therefore sends our customers monitoring capabilities to the next level. The results are displayed live and can be securely stored for future reference along with the AI-generated report."
+          imageSrc="/diagram.jpg"
         />
         <NewsSection />
         <BlogsSection />

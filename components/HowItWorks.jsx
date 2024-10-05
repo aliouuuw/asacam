@@ -34,7 +34,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <div className=" min-h-screen font-['Chakra_Petch',_sans-serif] py-16">
+    <div className=" min-h-screen py-16">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-16">How ASACAM Works</h2>
         <div className="relative">

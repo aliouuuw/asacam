@@ -1,43 +1,58 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import FlickeringGrid from "./ui/flickering-grid";
 
 const industries = [
   {
-    title: "Retail",
+    title: "Robotics",
     description:
-      "Enhance security, optimize operations, and improve customer experience.",
-    bgImage: "/industries/retail.jpg",
+      "Utilize AI for precise automation and monitoring, enhancing operational efficiency and safety in robotic systems.",
+    bgImage: "/industries/robotics.jpg",
   },
   {
     title: "Manufacturing",
     description:
-      "Improve safety, efficiency, and quality control in manufacturing facilities.",
+      "Boost production quality, safety, and operational efficiency with AI-powered monitoring and predictive maintenance.",
     bgImage: "/industries/manufacturing.jpg",
   },
   {
-    title: "Transportation",
+    title: "Security",
     description:
-      "Enhance safety, efficiency, and security in transportation systems.",
-    bgImage: "/industries/transportation.jpg",
+      "Leverage AI-driven surveillance to enhance threat detection, automate responses, and improve public safety.",
+    bgImage: "/industries/security.jpg",
   },
   {
     title: "Healthcare",
     description:
-      "Improve patient safety, optimize workflows, and enhance security in healthcare facilities.",
+      "Enhance patient care and security through AI solutions that optimize workflows, monitor critical areas, and ensure safety.",
     bgImage: "/industries/healthcare.jpg",
   },
   {
-    title: "Law Enforcement",
+    title: "Defense",
     description:
-    "Enhance security, operational efficiency, and decision-making through advanced AI surveillance and real-time data analysis.",
+      "Strengthen security and decision-making with real-time AI-powered surveillance for situational awareness and operational efficiency.",
     bgImage: "/industries/law.jpg",
   },
 ];
 
 export default function Applications() {
   const ref = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Set up a resize listener to determine if the screen is mobile
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Adjust the breakpoint as needed
+    };
+    window.addEventListener("resize", handleResize);
+    
+    // Initial check
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Get the scroll progress of the section
   const { scrollYProgress } = useScroll({
@@ -46,10 +61,12 @@ export default function Applications() {
   });
 
   // Simulate a smooth horizontal scroll over the industries
-  const xTransform = useTransform(scrollYProgress, [0, 1], ["30%", "-50%"]);
+  const xTransform = isMobile
+  ? useTransform(scrollYProgress, [0, 0.5, 1], ["0%", "-20%", "-80%"]) // Mobile values
+  : useTransform(scrollYProgress, [0, 0.3, 0.6, 1], ["30%", "15%", "0%", "-40%"]); // Desktop values
 
   // Control opacity and size changes over the scroll progress
-  const fadeTransform = useTransform(scrollYProgress, [0, 1], [0, 1]); // Fade in the industries
+  const fadeTransform = useTransform(scrollYProgress, [0, 0.5,  1], [0, 1, 1]); // Fade in the industries
   const widthTransform = useTransform(
     scrollYProgress,
     [0, 1],
@@ -57,10 +74,10 @@ export default function Applications() {
   ); // Expand effect for all cards
 
   return (
-    <section ref={ref} className="relative w-full h-[150vh] bg-white text-black">
+    <section ref={ref} className="relative w-full h-[150vh] bg-black text-white">
       {/* Make this sticky until all elements are scrolled  */}
       <motion.div
-        className="sticky top-16 flex w-fit h-[500px] px-8 md:px-16 xl:px-24 py-16 overflow-x-scroll"
+        className="sticky top-[25%] flex w-fit h-[500px] px-8 md:px-16 xl:px-24 overflow-x-scroll"
         style={{ x: xTransform }}
       >
         <div>

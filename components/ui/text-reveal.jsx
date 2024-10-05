@@ -22,7 +22,7 @@ export const TextRevealByWord = ({ text, className }) => {
     <div ref={targetRef} className={cn("relative z-0", className)}>
       <div className="sticky top-0 z-10 mx-auto flex h-[50vh] max-w-4xl items-center px-8 py-16">
         <motion.p
-          className="flex flex-wrap text-2xl font-bold text-black/20 md:text-3xl lg:text-4xl xl:text-5xl"
+          className="flex flex-wrap text-2xl font-bold text-white md:text-3xl lg:text-4xl xl:text-5xl"
           initial="hidden"
           animate="show"
           variants={containerVariants}
@@ -64,7 +64,7 @@ const Word = ({ children, progress, range }) => {
       <span className={"absolute opacity-30"}>{children}</span>
       <motion.span
         style={{ opacity, scale }}
-        className={"text-black"}
+        className={"text-white"}
       >
         {children}
       </motion.span>

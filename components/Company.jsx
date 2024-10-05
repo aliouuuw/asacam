@@ -5,45 +5,21 @@ export default function CompanySection() {
     const members = [
         {
           name: "Abdoulaye DIALLO",
-          role: "CEO & Founder",
+          role: "Founder & CEO",
           imageUrl: "/team/abdoulaye_diallo.png",
           linkeinUrl: "https://www.linkedin.com/in/laye-diallo/",
         },
         {
           name: "Jonathan ALLARASSEM",
-          role: "Head of R&D & Co-Founder",
+          role: "Co-Founder & CTO",
           imageUrl: "/team/Jonathan.jpg",
           linkeinUrl: "https://www.linkedin.com/in/jonathan-allarassem-0aab09200/",
         },
         {
-          name: "Saliou DIOUF",
-          role: "CTO & Co-Founder",
-          imageUrl: "/team/Saliou_Diouf.jpg",
-          linkeinUrl: "https://ca.linkedin.com/in/andypoprawa",
-        },
-        {
           name: "Aliou WADE",
-          role: "Senior Software Engineer & Architect",
+          role: "Front-end Engineer",
           imageUrl: "/team/Aliou.png",
           linkeinUrl: "https://www.linkedin.com/in/aliou-wade-35a435196/",
-        },
-        {
-          name: "Babacar SOW",
-          role: "Hardware Team Lead",
-          imageUrl: "/team/Babacar_Sow.jpg",
-          linkeinUrl: "https://www.linkedin.com/in/babacar-sassy-ngom-sow-910489204/",
-        },
-        {
-          name: "Mouhamad GUEYE",
-          role: "Software Engineer",
-          imageUrl: "/team/mouhamad_gueye.jpg",
-          linkeinUrl: "https://www.linkedin.com/in/mouhamad-gueye-b00b31229/",
-        },
-        {
-          name: "Saly DIABY",
-          role: "Head Of Legal & Communication",
-          imageUrl: "/team/saly_diaby.jpeg",
-          linkeinUrl: "https://www.linkedin.com/in/saly-diaby-38b249200/",
         },
       ];
 
@@ -64,14 +40,14 @@ export default function CompanySection() {
 
       {/* Our Team Section */}
       <motion.div
-        className="max-w-7xl mx-auto text-center"
+        className="max-w-7xl mx-auto text-center flex flex-col items-center"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
       >
         <h2 className="text-4xl md:text-5xl font-bold mb-12">Meet Our Talented Team</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {members.map((member, index) => (
             <motion.div
               key={member.name}

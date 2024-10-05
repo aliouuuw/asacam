@@ -16,6 +16,7 @@ import Applications from "@/components/Applications";
 import { Features } from "@/components/Features";
 import ResearchSection from "@/components/Research";
 import CompanySection from "@/components/Company";
+import FlickeringGrid from "@/components/ui/flickering-grid";
 
 const sections = ["product", "research", "company"];
 
@@ -64,9 +65,7 @@ export default function Home() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight; // Adjusted to include viewport height
       const sectionHeights = sections.map(
-        (section) =>
-          document.getElementById(section).offsetTop +
-          document.getElementById(section).clientHeight / 2
+        (section) => document.getElementById(section).offsetTop
       );
       const activeIndex = sectionHeights.findIndex(
         (height) => height > scrollPosition
@@ -103,8 +102,16 @@ export default function Home() {
       />
       <main>
         <Hero />
-        <div id="product">
-          <div className="z-10 flex items-center justify-center md:h-screen bg-white relative">
+        <div id="product" className="relative">
+          <div className="z-10 flex items-center justify-center md:h-screen bg-transparent text-white relative">
+            <FlickeringGrid
+              className="z-0 absolute tinset-0 size-full"
+              squareSize={4}
+              gridGap={6}
+              color="#6B7280"
+              maxOpacity={0.5}
+              flickerChance={0.1}
+            />
             <TextRevealByWord text={introductionText} />
           </div>
           <Features />

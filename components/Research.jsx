@@ -62,33 +62,7 @@ export default function ResearchSection() {
             research and market analysis.
           </p>
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-        >
-          <Card className="bg-black border border-white/20 text-white p-6 shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-2xl text-center text-white">
-                Super High-Level System Architecture
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="h-fit w-full bg-white flex items-center justify-center">
-                <Image
-                  src="/asacam-diagram.png" // Ensure correct path to your image
-                  alt="System Architecture Diagram"
-                  width={1000}
-                  height={600}
-                  objectFit="cover"
-                />
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8">
           {researchAreas.map((area, index) => (
             <motion.div
               key={area.title}
@@ -111,7 +85,32 @@ export default function ResearchSection() {
             </motion.div>
           ))}
         </div>
-
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+          className="px-4 sm:px-6 lg:px-8"
+        >
+          <Card className="bg-black border border-white/20 text-white p-6 shadow-lg flex flex-col items-center">
+            <CardHeader>
+              <CardTitle className="text-2xl text-center text-white mb-4">
+                LLM in Video Monitoring
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="h-fit max-w-4xl flex items-center justify-center">
+                <Image
+                  src="/diagram.jpg" // Ensure correct path to your image
+                  alt="System Architecture Diagram"
+                  width={1000}
+                  height={600}
+                  objectFit="cover"
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
     </section>
   );

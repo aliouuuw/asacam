@@ -54,7 +54,7 @@ export default function ResearchSection() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 font-['Chakra_Petch'] text-white">Research & Innovation</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">Research & Innovation</h2>
           <p className="text-xl max-w-3xl mx-auto text-gray-300">Driving the future of AI-powered surveillance through cutting-edge research and market analysis.</p>
         </motion.div>
 
@@ -71,7 +71,7 @@ export default function ResearchSection() {
               <Card className="bg-black border border-white/20 text-white h-full">
                 <CardHeader className="flex flex-row items-center space-x-4 pb-2">
                   <area.icon className="w-8 h-8 text-gray-300" /> {/* Color for icons */}
-                  <CardTitle className="text-xl font-['Chakra_Petch']">{area.title}</CardTitle>
+                  <CardTitle className="text-xl">{area.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-gray-300">{area.content}</p>
@@ -89,7 +89,7 @@ export default function ResearchSection() {
         >
           <Card className="bg-black border border-white/20 text-white p-6 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl font-['Chakra_Petch'] text-center text-white">AI Video Surveillance Market Growth</CardTitle>
+              <CardTitle className="text-2xl text-center text-white">AI Video Surveillance Market Growth</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="h-[300px] w-full bg-white">

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import Image from 'next/image';
 import Link from "next/link"
 
 export default function CompanySection() {
@@ -57,9 +58,11 @@ export default function CompanySection() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               whileHover={{ scale: 1.05 }}
             >
-              <img
+              <Image
                 src={member.imageUrl}
                 alt={member.name}
+                width={500}
+                height={500}
                 className="rounded-full w-[120px] h-[120px] mx-auto mb-4 transition-transform hover:scale-105"
                 style={{ aspectRatio: "1/1", objectFit: "cover" }}
               />

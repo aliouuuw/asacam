@@ -40,6 +40,10 @@ const industries = [
 export default function Applications() {
   const ref = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [rangeArrays, setRangeArrays] = useState({
+    inputRange: [0, 0.5, 1],
+    outputRange: ["0%", "-20%", "-80%"],
+  });
 
   // Set up a resize listener to determine if the screen is mobile
   useEffect(() => {
@@ -47,7 +51,7 @@ export default function Applications() {
       setIsMobile(window.innerWidth < 768); // Adjust the breakpoint as needed
     };
     window.addEventListener("resize", handleResize);
-    
+
     // Initial check
     handleResize();
 
@@ -59,14 +63,30 @@ export default function Applications() {
     target: ref,
     // offset: ["start end", "end end"], // Adjust the offset to start/end appropriately
   });
+  // Update the input and output range for useTransform based on screen size
+  useEffect(() => {
+    if (isMobile) {
+      setRangeArrays({
+        inputRange: [0, 0.3, 0.6, 1],
+        outputRange: ["0%", "-20%", "-80%", "-100%"],
+      });
+    } else {
+      setRangeArrays({
+        inputRange: [0, 0.3, 0.6, 1],
+        outputRange: ["30%", "15%", "0%", "-40%"],
+      });
+    }
+  }, [isMobile]);
 
-  // Simulate a smooth horizontal scroll over the industries
-  const xTransform = isMobile
-  ? useTransform(scrollYProgress, [0, 0.5, 1], ["0%", "-20%", "-80%"]) // Mobile values
-  : useTransform(scrollYProgress, [0, 0.3, 0.6, 1], ["30%", "15%", "0%", "-40%"]); // Desktop values
+  // Use the dynamic range arrays in the useTransform hook
+  const xTransform = useTransform(
+    scrollYProgress,
+    rangeArrays.inputRange,
+    rangeArrays.outputRange
+  );
 
   // Control opacity and size changes over the scroll progress
-  const fadeTransform = useTransform(scrollYProgress, [0, 0.5,  1], [0, 1, 1]); // Fade in the industries
+  const fadeTransform = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1]); // Fade in the industries
   const widthTransform = useTransform(
     scrollYProgress,
     [0, 1],
@@ -74,7 +94,10 @@ export default function Applications() {
   ); // Expand effect for all cards
 
   return (
-    <section ref={ref} className="relative w-full h-[150vh] bg-black text-white">
+    <section
+      ref={ref}
+      className="relative w-full h-[150vh] bg-black text-white"
+    >
       {/* Make this sticky until all elements are scrolled  */}
       <motion.div
         className="sticky top-[25%] flex w-fit h-[500px] px-8 md:px-16 xl:px-24 overflow-x-scroll"

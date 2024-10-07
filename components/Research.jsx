@@ -20,16 +20,16 @@ const researchAreas = [
       "By integrating LLMs, we've enhanced scene understanding and natural language descriptions. Our models can process and describe complex scenarios in real-time with 99% contextual accuracy.",
   },
   {
-    title: "Market Analysis",
+    title: "Scalability",
     icon: TrendingUp,
     content:
-      "Our market research indicates a CAGR of 22.3% in the AI surveillance market from 2023 to 2030. ASACAM is positioned to capture 5% of this rapidly growing market by 2025.",
+      "No more need to buy specific cameras; our app can be deployed on any platform. Designed with scalability in mind, it seamlessly grows with your needs.",
   },
   {
     title: "Competitive Landscape",
     icon: Users,
     content:
-      "Analysis of 50+ competitors reveals that ASACAM is the only solution offering end-to-end automation with LLM integration, giving us a unique advantage in the market.",
+      "Setting a new standard in the market, we've built the first automated and unified toolchain leveraging LLMs for live video monitoring missions.",
   },
 ];
 

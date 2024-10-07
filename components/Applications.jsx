@@ -8,31 +8,31 @@ const industries = [
   {
     title: "Robotics",
     description:
-      "Utilize AI for precise automation and monitoring, enhancing operational efficiency and safety in robotic systems.",
+      "Enhance robot functionality with precision monitoring.",
     bgImage: "/industries/robotics.jpg",
   },
   {
     title: "Manufacturing",
     description:
-      "Boost production quality, safety, and operational efficiency with AI-powered monitoring and predictive maintenance.",
+      "Streamline production with real-time oversight.",
     bgImage: "/industries/manufacturing.jpg",
   },
   {
     title: "Security",
     description:
-      "Leverage AI-driven surveillance to enhance threat detection, automate responses, and improve public safety.",
+      "Bolster protection with advanced threat detection.",
     bgImage: "/industries/security.jpg",
   },
   {
     title: "Healthcare",
     description:
-      "Enhance patient care and security through AI solutions that optimize workflows, monitor critical areas, and ensure safety.",
+      "Improve patient care through proactive surveillance.",
     bgImage: "/industries/healthcare.jpg",
   },
   {
     title: "Defense",
     description:
-      "Strengthen security and decision-making with real-time AI-powered surveillance for situational awareness and operational efficiency.",
+      "Strengthen defenses with strategic intelligence gathering.",
     bgImage: "/industries/law.jpg",
   },
 ];

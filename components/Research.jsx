@@ -11,7 +11,7 @@ const researchAreas = [
     title: "Object Detection",
     icon: Camera,
     content:
-      "Our research in object detection focuses on improving accuracy and reducing false positives. We've achieved a 95% accuracy rate in complex environments, surpassing industry standards by 15%.",
+      "We tested our computer vision models on multiple datasets, including RGB and infrared imagery, achieving precision and recall rates above 93% during maritime reconnaissance missions with drones.",
   },
   {
     title: "Large Language Models",

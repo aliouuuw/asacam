@@ -59,7 +59,7 @@ export default function ResearchSection() {
           </h2>
           <p className="text-xl max-w-3xl mx-auto text-gray-300">
             Driving the future of AI-powered surveillance through cutting-edge
-            research and market analysis.
+            research.
           </p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8">
